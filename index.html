@@ -6,22 +6,14 @@
 </head>
 <body>
     <label for="myTextArea">Username:</label><br>
-    <input type="text" id="myTextArea" name="textt"><br><br>
+    <input type="text" id="myTextArea"><br><br>
+    <label for="myTextArea">Password:</label><br>
+    <input type="text" id="myTextArea2"><br><br>
     <button id="bttn" name="button">Login</button>
-    <p id="Granted" style="visibility: hidden;">Login Granted</p>
-    <p id="NotGranted" style="visibility: hidden;">Incorrect Username</p>
+    <p id="Granted" style="visibility: hidden">Login Granted</p>
+    <p id="NotGranted" style="visibility: hidden;">Incorrect Username or Password</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSITG_ajsQbgYYj6EECDUilhk2878TXs0ndGjPY6BKJgv-DdpWm_t0rX8pPt8LuxZn-hcY&usqp=CAU" style="visibility: hidden" id="Image">
 
-    <script>
-        document.getElementById("bttn").addEventListener('click', function() {
-            var username = document.getElementById("myTextArea").value; // Get the value from the input field
-            if (username === '24084') { // Compare the value as a string
-                document.getElementById("Granted").style.visibility = 'visible';
-                document.getElementById("NotGranted").style.visibility = 'hidden';
-            } else {
-                document.getElementById("NotGranted").style.visibility = 'visible';
-                document.getElementById("Granted").style.visibility = 'hidden';
-            }
-        });
-    </script>
+    <script src="Untitled-1.js"></script>
 </body>
 </html>
