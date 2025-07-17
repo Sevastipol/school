@@ -2,19 +2,79 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>LOGIN</title>
+    <title>Mean Calculator</title
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: 'Segoe UI';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #Paragraph {
+            font-size: 30px;
+            color: rgb(0, 0, 0);
+            margin-bottom: 20px;
+        }
+        input {
+            font-size: 20px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        #Button {
+            width: 70px;
+            height: 70px;
+            background-color: rgb(0, 255, 0);
+            color: aliceblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #Answer {
+            width: 170px;
+            height: 70px;
+            border: none;
+            color: rgb(0, 0, 0);
+            size: 50px;
+            background-color: rgb(255, 255, 255);
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body>
-    <label for="myTextArea">Username:</label><br>
-    <input type="text" id="myTextArea"><br><br>
-    <label for="myTextArea">Password:</label><br>
-    <input type="text" id="myTextArea2"><br><br>
-    <button id="bttn" name="button">Login</button>
-    <p id="Granted" style="visibility: hidden">Login Granted</p>
-    <p id="NotGranted" style="visibility: hidden;">Incorrect Username or Password</p>
-    <img style="visibility: hidden" id="Image">
-    <img style="visibility: hidden" id="Image2">
+    <p id="Paragraph">Division Calculator</p>
+    <input id="Input1" type="number" placeholder="Enter first number">
+    <input id="Input2" type="number" placeholder="Enter second number">
+    <input id="Input3" type="number" placeholder="Enter third number">
+    <input id="Input4" type="number" placeholder="Enter fourth number">
+    <input id="Input5" type="number" placeholder="Enter fifth number">
+    <input id="Input6" type="number" placeholder="Enter sixth number">
+    <button id="Button">Calculate</button>
+    <button id="Answer" disabled>Result goes here</button>
 
-    <script src="Untitled-1.js"></script>
+    <script>
+        let Divideby = 0;
+        let Totalnums = 0;
+
+        document.getElementById("Button").addEventListener('click', function() {
+            const inputs = ["Input1", "Input2", "Input3", "Input4", "Input5", "Input6"];
+
+            inputs.forEach(inputId => {
+                const num = parseFloat(document.getElementById(inputId).value);
+                if (!isNaN(num) && num !== '') {
+                    Totalnums += num;
+                    Divideby++;
+                }
+            });
+
+            const average = Divideby > 0 ? Totalnums / Divideby : 0;
+            document.getElementById("Answer").textContent = `Result: ${average.toFixed(2)}`;
+            Divideby = 0;
+            Totalnums = 0;
+        });
+    </script>
 </body>
 </html>
